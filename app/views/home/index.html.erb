@@ -1,4 +1,20 @@
+<%= content_for :banner do %>
 
+		<div class="banner">
+      <div class="wrapper-grid"><br/><br/><br/><br/>
+        <br/><br/><br/><br/><br/>
+        <br/><br/><br/><br/><br/>
+      <h1 class="banner-head">
+          Regrouping your contact list.<Br />
+          Very useful.
+
+      </h1><Br /><Br />
+      <% if !user_signed_in? %>
+<%= link_to 'Join Today', new_user_registration_path, class: 'pure-button pure-button-primary bigger float-left' %><div style="margin-left: 20px;">
+<% end %>
+    </div>
+    </div>
+<% end %>
 
 <div class="l-content">
 <!-- <div class="pure-g">
@@ -8,14 +24,6 @@
     <div class="pure-u-1-3"> ... </div>
 
 </div> -->
-<% if !user_signed_in? %>
-<%= link_to 'Join our Services', new_user_registration_path, class: 'pure-button pure-button-primary bigger' %>
-<% end %>
-</div> <!-- end l-content -->
-<!-- 
-<div class="footer">
-    <p class="l-box">
-        <a href="#">Try now</a> for 14 days. No credit card required. Header image courtesy of <a href='http://unsplash.com/'>Unsplash</a>.
-    </p>
-</div> -->
+
+</div>
 

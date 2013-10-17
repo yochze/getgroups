@@ -7,14 +7,17 @@ $(document).ready(function(){
 		transition:"none",
 		speed:800,
 		fadeOut:200,
-		width:550,
-		height:350,
+		width:590,
+		height:460,
 		fixed:true, 
 		className:'issue-modal'
 });
 });
 </script>
-
+<div class="center-header">
+	<%= image_tag 'settings01.png', class: 'center'  %><br />
+	<h2>Dashboard</h2>
+</div>
 <div class="groups-title">
 <h4 class="groups-h4"><%= current_user.first_name %>'s groups</h4> 
 <button id="new-group" class="pure-button pure-button-secondary inline-right">New Group</button>
