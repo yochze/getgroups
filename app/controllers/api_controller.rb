@@ -1,11 +1,19 @@
 class ApiController < ApplicationController
 	def announcements
-		tokens = params[:tokens]
+		begin
+			tokens = params[:tokens].split(',')
+			people = Person.where(token: tokens)
+			groups = []
+			anns = []
 
+			people.each { |p| groups << p.group.id }
 
+			Announcement.where(group_id: groups).each {|a| anns << {group_name: a.group.title, content: a.content} }
 
-		render text: 'afsskjlaf;ls' + tokens.inspect
-
+			render json: anns
+		rescue Exception => e  
+			render :json => { error: e }
+		end
 	end
 
 	def groups
@@ -31,7 +39,7 @@ class ApiController < ApplicationController
 			# people = Person.where(token: tokens)
 			people = []
 
-			Group.find(group_id).people.each { |p| people << {id: p.id, title: p.name } }
+			Group.find(group_id).people.each { |p| people << {id: p.id, first_name: p.first_name, last_name: p.last_name } }
 
 			render json: people
 		rescue Exception => e  
