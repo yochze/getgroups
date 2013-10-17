@@ -1,6 +1,6 @@
 class Person < ActiveRecord::Base
 	# Basic Identity
-	attr_accessible :first_name, :last_name
+	attr_accessible :first_name, :last_name, :token
 
 	# Contacts
 	attr_accessible :phone, :phone_scnd, :fax, :email, :url
@@ -14,6 +14,8 @@ class Person < ActiveRecord::Base
 	# Relations
 	belongs_to :group
 
+	before_create :generate_token
+
 	# Validations
 	validates :first_name, :presence => true
 	validates :last_name, :presence => true
@@ -21,6 +23,11 @@ class Person < ActiveRecord::Base
 	validates :phone, :presence => true
 	validates :job_title, :presence => true
 	# validates :avatar, :presence => true
+
+	def generate_token
+		o =  [('a'..'z'),('A'..'Z')].map{|i| i.to_a}.flatten
+        self.token = (0...10).map{ o[rand(o.length)] }.join
+	end
 
 
 end

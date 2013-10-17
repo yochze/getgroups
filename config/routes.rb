@@ -7,6 +7,11 @@ Getgroups::Application.routes.draw do
   end
   
    devise_for :users, :controllers => { :registrations => "users/registrations" }
+
+  get 'api/announcements'
+  get 'api/groups'
+  get 'api/group'
+  post 'api/check_token'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
