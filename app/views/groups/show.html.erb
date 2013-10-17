@@ -28,6 +28,20 @@ $(document).ready(function(){
         fixed:true, 
         className:'issue-modal'
 });
+    
+    var new_announcement_modal = "<%= escape_javascript(render(:partial => 'token_pop')) %>"
+
+      $('#new-token').colorbox({
+        html:new_announcement_modal,
+        transition:"none",
+        speed:800,
+        fadeOut:200,
+        width:650,
+        height:480,
+        fixed:true, 
+        className:'issue-modal'
+});
+
 
 });
 </script>
@@ -108,7 +122,7 @@ $(document).ready(function(){
 <div class="right-side-contacts"> 
 	<button id="new-announcement" class="pure-button pure-button-secondary pure-button-small">Broadcast</button><br /> <br />
 	<button class="pure-button pure-button-secondary pure-button-small" id="new-person">New Person</button><br /> <br />
-	<button class="pure-button pure-button-secondary pure-button-small">New Token</button> <br /> <br />
+	<button id="new-token" class="pure-button pure-button-secondary pure-button-small">New Token</button> <br /> <br />
 	<button class="pure-button pure-button-secondary pure-button-small">Share via Email</button><br /><br />
     <h5>Export to:</h5>
     <%= image_tag 'googlecontacts.png' %>
