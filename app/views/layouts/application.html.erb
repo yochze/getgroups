@@ -1,3 +1,5 @@
+        <% user_signed_in? ? logo_path = groups_path : logo_path = root_path %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,23 +11,33 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<div class="l-content">
-		<div class="logo-area">
-<!-- <div class="banner"> -->
 
-    <h1 class="banner-head">
-        <%= link_to image_tag('logo.PNG', class: 'ye-logo-center'), groups_path %> <br />
-    </h1>
-    </div>
-<!-- </div> -->
-<!-- <div class="pure-menu pure-menu-open pure-menu-horizontal pure-menu-fixed">
-    <a href="#" class="pure-menu-heading">Your Logo</a>
-    <ul>
-        <li><a href="#">Home</a></li>
-        <li class="pure-menu-selected"><a href="#">Pricing</a></li>
-        <li><a href="#">Contact</a></li>
+  
+
+    <div class="pure-menu pure-menu-fixed pure-menu-open pure-menu-horizontal float-right">
+      <div class="wrapper-grid">
+          <a href="#" class="">
+      <%= link_to image_tag('small_logo.PNG', class: 'displ-inline'), logo_path %>
+    </a>
+    <ul class="new-menu-because-pure-sucks">
+      <li class="pure-menu-selected"><a href="/">Home</a></li>
+      <% if user_signed_in? %>
+        
+        <li><%= link_to 'My Groups', groups_path %></li>
+        <li><%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %></li>
+        
+      <% else %>
+        <li><%= link_to 'Sign Up / Sign In', new_user_registration_path %>
+          </li>
+      <% end %>
     </ul>
-</div> -->
+</div>
+</div>
+
+
+
+<%= yield(:banner) %>
+<div class="l-content">
 <%= yield %>
 </div>
 </body>

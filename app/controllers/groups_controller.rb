@@ -29,6 +29,7 @@ class GroupsController < ApplicationController
   def show
     @group = Group.find(params[:id])
     @person = @group.people.build
+    @announcement = @group.announcements.build
   end
 
   def new

@@ -16,6 +16,19 @@ $(document).ready(function(){
 		fixed:true, 
 		className:'issue-modal'
 });
+        var new_announcement_modal = "<%= escape_javascript(render(:partial => 'announcements/new_pop')) %>"
+
+      $('#new-announcement').colorbox({
+        html:new_announcement_modal,
+        transition:"none",
+        speed:800,
+        fadeOut:200,
+        width:650,
+        height:480,
+        fixed:true, 
+        className:'issue-modal'
+});
+
 });
 </script>
 
@@ -27,7 +40,29 @@ $(document).ready(function(){
 
 <br /><br />
 <div class="left-side-contacts"> 
+    <h4 style="text-align:left; padding-left:14px; font-weight: 300; border-left: solid 1px #42b8dd;">Announcements</h4>
+    <% if @group.announcements.size == 1 %>
+    <h1 style="text-align:left; font-weight: 300;">No announcements yet.</h1>
+    <% else %>
+    <ul>
+        <% @group.announcements.each do |anc| %>
+        <% if anc.persisted? %>
+       <li style="text-align:left; margin-top:14px; font-weight: 300; color:#888;">  
+          <%= truncate(anc.content, length: 80) %>
+        </li>
+        <% end %>
+        <% end %>
+
+    </ul>
+
+    <% end %>
+    
+</div>
+
+<div class="left-side-contacts"> 
+    <h4 style="text-align:left; padding-left:14px; font-weight: 300; border-left: solid 1px #42b8dd;">People</h4>
     <% if @group.people.size == 1 %>
+
     	<h1 style="text-align:left; font-weight: 300;">No people yet.</h1>
     <% else %>
 	<table class="pure-table pretty">
@@ -66,13 +101,19 @@ $(document).ready(function(){
  	<% end %>
     </tbody>
 </table>
-
-
 </div>
+
+
+
 <div class="right-side-contacts"> 
-	<button class="pure-button pure-button-secondary pure-button-small">Broadcast</button><br /> <br />
+	<button id="new-announcement" class="pure-button pure-button-secondary pure-button-small">Broadcast</button><br /> <br />
 	<button class="pure-button pure-button-secondary pure-button-small" id="new-person">New Person</button><br /> <br />
 	<button class="pure-button pure-button-secondary pure-button-small">New Token</button> <br /> <br />
-	<button class="pure-button pure-button-secondary pure-button-small">Share via Email</button>
+	<button class="pure-button pure-button-secondary pure-button-small">Share via Email</button><br /><br />
+    <h5>Export to:</h5>
+    <%= image_tag 'googlecontacts.png' %>
+    <%= image_tag 'excelcontacts.png' %>
+    <%= image_tag 'yahoocontacts.png' %>
+
 </div>
 </div>

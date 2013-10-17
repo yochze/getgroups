@@ -4,6 +4,7 @@ Getgroups::Application.routes.draw do
   resources :groups do
     
     resources :people
+    resources :announcements
   end
   
    devise_for :users, :controllers => { :registrations => "users/registrations" }

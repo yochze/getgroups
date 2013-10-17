@@ -11,6 +11,7 @@ class Group < ActiveRecord::Base
 
 	# Contacts
 	has_many :people
+	has_many :announcements
 
 	# Validations
 	validates :title, :presence => true
