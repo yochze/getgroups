@@ -12,6 +12,9 @@ gem 'devise'
 gem 'protected_attributes'
 gem 'flat-ui-rails'
 gem 'paperclip'
+gem 'rails_12factor', group: :production # For Heroku
+
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
