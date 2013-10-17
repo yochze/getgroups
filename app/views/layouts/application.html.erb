@@ -37,8 +37,19 @@
 
 
 <%= yield(:banner) %>
+<%= yield(:fullwidth) %>
 <div class="l-content">
 <%= yield %>
+</div>
+
+
+<div class="footer">
+  <div class="wrapper-grid">
+    <p class="l-box">
+      <%= image_tag 'small_logo_grayscale.png' %>
+        <a href="#">getGroups</a> Built in less than 24hrs in Yahoo! Hack Israel.
+    </p>
+    </div>
 </div>
 </body>
 </html>
