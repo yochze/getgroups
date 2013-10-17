@@ -1,10 +1,10 @@
 class AddLogoToGroupNew < ActiveRecord::Migration
   def self.up
-    add_attachment :groups, :logo
+    # add_attachment :groups, :logo
   end
 
   def self.down
-    remove_attachment :groups, :logo
+    # remove_attachment :groups, :logo
   end
 
 end
