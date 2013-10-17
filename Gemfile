@@ -12,9 +12,9 @@ gem 'devise'
 gem 'protected_attributes'
 gem 'flat-ui-rails'
 gem 'paperclip'
-# gem 'rails_12factor', group: :production # For Heroku
-# gem 'rails_log_stdout',           github: 'Heroku/rails_log_stdout'
-# gem 'rails3_serve_static_assets', github: 'Heroku/rails3_serve_static_assets'
+gem 'rails_12factor', group: :production # For Heroku
+gem 'rails_log_stdout',           github: 'Heroku/rails_log_stdout'
+gem 'rails3_serve_static_assets', github: 'Heroku/rails3_serve_static_assets'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
