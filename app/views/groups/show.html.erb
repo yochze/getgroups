@@ -1,0 +1,78 @@
+
+
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+  var new_person_modal = "<%= escape_javascript(render(:partial => 'people/new_pop')) %>"
+
+      $('#new-person').colorbox({
+		html:new_person_modal,
+		transition:"none",
+		speed:800,
+		fadeOut:200,
+		width:750,
+		height:580,
+		fixed:true, 
+		className:'issue-modal'
+});
+});
+</script>
+
+
+<div class="l-content centered-text" >
+<%= image_tag @group.logo.url(:medium), class: 'group-logo' %>
+<h1 style="margin:0;"><%= @group.title %></h1>
+<p style="margin:0;"><%= @group.info %></p>
+
+<br /><br />
+<div class="left-side-contacts"> 
+    <% if @group.people.size == 1 %>
+    	<h1 style="text-align:left; font-weight: 300;">No people yet.</h1>
+    <% else %>
+	<table class="pure-table pretty">
+    <thead>
+        <tr>
+            <th class="img-column"></th>
+            <th>Full Name</th>
+            <th>Title</th>
+            <th>Phone #1</th>
+            <th>Email</th>
+            <th class="tiny-column">X</th>
+        </tr>
+    </thead>
+
+    <tbody>
+    	<% cnt = 1 %>
+
+    	<% @group.people.each do |person| %>
+    	<% if person.persisted? %>
+    	<% if (cnt % 2)==0 %>
+    	<tr class="pure-table-odd">
+    	<% else %>
+		<tr class="pure-table-even">
+    	<% end %>
+        
+        	<td class="img-column"><%= image_tag person.avatar.url(:thumb), class: 'tiny-user' %></td>
+            <td><%= person.first_name  %></td>
+            <td><%= person.job_title  %></td>
+            <td><%= person.phone  %></td>
+            <td><%= person.email  %></td>
+            <td><%= link_to 'X', group_person_path(@group, person), :confirm => "are you sure?", :remote => false, :method => :delete %></td>
+        </tr>
+        <% cnt+=1 %>
+        <% end %>
+        <% end %>
+ 	<% end %>
+    </tbody>
+</table>
+
+
+</div>
+<div class="right-side-contacts"> 
+	<button class="pure-button pure-button-secondary pure-button-small">Broadcast</button><br /> <br />
+	<button class="pure-button pure-button-secondary pure-button-small" id="new-person">New Person</button><br /> <br />
+	<button class="pure-button pure-button-secondary pure-button-small">New Token</button> <br /> <br />
+	<button class="pure-button pure-button-secondary pure-button-small">Share via Email</button>
+</div>
+</div>

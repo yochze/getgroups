@@ -1,0 +1,29 @@
+
+<div class="basic-pop-up">
+
+	<h1>A new person</h1>
+<Br /><Br />
+	<div class="left-side-new-person">
+ <% image_tag 'user_add_image.png', class: 'user_add_image' %>
+	<%= form_for([@group, @person],  :html => { class: 'pure-form center-it'}) do |f| %>
+			  <%= f.text_field :first_name, :placeholder => 'First name', :class => 'center-it'  %><br/><br/>
+			  <%= f.text_field :last_name, :placeholder => 'Last name', :class => 'center-it' %><br/><Br />
+			  <%= f.text_field :job_title, :placeholder => 'Title', :class => 'center-it' %><br/><br />
+			  <%= f.text_field :phone, :placeholder => 'Phone', :class => 'center-it' %><br/><br />
+  			  <%= f.text_field :email, :placeholder => 'Email address', :class => 'center-it' %><br/><br />
+  			  <%= f.text_field :url, :placeholder => 'Website URL', :class => 'center-it' %><br/><br />
+
+  			  <%= f.file_field :avatar %>
+
+			<div><%= f.submit 'Create', :class => 'pure-button pure-button-secondary center-it' %></div>
+	<% end %>
+	</div>
+
+	<div class="right-side-new-person">
+		..
+	</div>
+
+
+</div>
+
+

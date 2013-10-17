@@ -1,0 +1,15 @@
+
+<div class="basic-pop-up">
+
+	<h1>A new group</h1>
+	<%= form_for(@group,  :html => { class: 'pure-form center-it'}) do |f| %>
+			  <%= f.text_field :title, :placeholder => 'Group name', :class => 'center-it'  %><br/><br/>
+			  <%= f.text_area :info, :placeholder => 'Some info', :class => 'textarea center-it' %><br/>
+		    <%= f.file_field :logo %>
+
+			<div><%= f.submit 'Create', :class => 'pure-button pure-button-secondary center-it' %></div>
+	<% end %>
+
+</div>
+
+

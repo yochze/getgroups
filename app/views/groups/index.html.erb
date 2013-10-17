@@ -1,0 +1,42 @@
+<script type="text/javascript">
+$(document).ready(function(){
+  var new_group_modal = "<%= escape_javascript(render(:partial => 'groups/new_pop')) %>"
+
+      $('#new-group').colorbox({
+		html:new_group_modal,
+		transition:"none",
+		speed:800,
+		fadeOut:200,
+		width:550,
+		height:350,
+		fixed:true, 
+		className:'issue-modal'
+});
+});
+</script>
+
+<div class="groups-title">
+<h4 class="groups-h4"><%= current_user.first_name %>'s groups</h4> 
+<button id="new-group" class="pure-button pure-button-secondary inline-right">New Group</button>
+</div>
+<br clear="all" />
+<div class="company-listing">
+	<ul>
+		<% current_user.groups.each do |group| %>
+		<li>
+			<div class="company-listing-logo">
+				<%= image_tag group.logo.url(:thumb) %>
+			</div>
+			<div class="company-info">
+				<%= link_to group.title, group %>
+				<p><%= group.info %></p>
+			<div class="icons_list">
+				<%= image_tag 'users_icon.png', class: 'gray-icon' %> &nbsp;  <%= group.people.size %>  
+				<%= image_tag 'stats_icon.png', class: 'gray-icon' %> 123
+			</div>
+			</div>
+		</li><br />
+		<% end %>
+	</ul>
+
+</div>

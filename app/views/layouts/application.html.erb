@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>getGroups</title>
+  <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div class="l-content">
+		<div class="logo-area">
+<!-- <div class="banner"> -->
+
+    <h1 class="banner-head">
+        <%= image_tag('logo.PNG', class: 'ye-logo-center') %> <br />
+    </h1>
+    </div>
+<!-- </div> -->
+<!-- <div class="pure-menu pure-menu-open pure-menu-horizontal pure-menu-fixed">
+    <a href="#" class="pure-menu-heading">Your Logo</a>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li class="pure-menu-selected"><a href="#">Pricing</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</div> -->
+<%= yield %>
+</div>
+</body>
+</html>
