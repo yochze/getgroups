@@ -10,20 +10,39 @@
 
       </h1><Br /><Br />
       <% if !user_signed_in? %>
-<%= link_to 'Join Today', new_user_registration_path, class: 'pure-button pure-button-primary bigger float-left' %><div style="margin-left: 20px;">
+<%= link_to 'Join Today', new_user_registration_path, class: 'pure-button pure-button-primary bigger float-left' %>
+    <% else %>
+    <%= link_to 'Form a new Group', groups_path, class: 'pure-button pure-button-primary bigger float-left' %>
 <% end %>
     </div>
     </div>
 <% end %>
 
-<div class="l-content">
-<!-- <div class="pure-g">
+<%= content_for :fullwidth do %>
 
-    <div class="pure-u-1-3"> ... </div>
-    <div class="pure-u-1-3"> ... </div>
-    <div class="pure-u-1-3"> ... </div>
-
-</div> -->
-
+<!-- <div class="fullwidth">
+<div class="wrapper-grid"><br />
+  <div style="float:left; display:inline-block; width:500px;">
+  <h1>Regrouping your contacts</h1>
+  <p style="color:#888; font-size:14pt; font-weight:300;" >
+    Some marketing text is here.
+      Some marketing text is here.<br /><br />
+        Some marketing text is here.  Some marketing text is here.
+  </p>
+  </div>
+  <div style="float:right; display:inline-block; width:300px;">
+    asd
 </div>
 
+</div>
+<br clear="all" /> -->
+<div class="fullwidth">
+  <br />
+  <div class="wrapper-grid">
+  <h1>Regrouping your contacts</h1>
+  <p style="color:#888; font-size:14pt; font-weight:300;" >
+    Some marketing material
+  </p>
+</div>
+</div>
+<% end %>
