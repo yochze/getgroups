@@ -39,7 +39,17 @@ class ApiController < ApplicationController
 			# people = Person.where(token: tokens)
 			people = []
 
-			Group.find(group_id).people.each { |p| people << {id: p.id, first_name: p.first_name, last_name: p.last_name } }
+			Group.find(group_id).people.each do |p| 
+				people << {
+					id: p.id, 
+					first_name: p.first_name, 
+					last_name: p.last_name,
+					phone: p.phone,
+					photo: URI.join(request.url, p.avatar.url(:thumb)).to_s 
+				}
+			end
+
+			logger.debug people.inspect
 
 			render json: people
 		rescue Exception => e  
