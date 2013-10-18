@@ -322,7 +322,7 @@ p {
  */
 
 .banner {
-    background: transparent url('/images/bg-header.png') 0 0 no-repeat fixed;
+    background: transparent asset-url('bg-header.png') 0 0 no-repeat fixed;
     background-position: center;
     background-size: 100%;
     text-align: center;
