@@ -25,7 +25,12 @@ $(document).ready(function(){
 <br clear="all" />
 <div class="company-listing">
 	<ul>
+		<% if current_user.groups.size == 0 %>
+			<h1 style="font-size:18pt; font-weight:200;">No groups yet.</h1>
+		<% end %>
+
 		<% current_user.groups.each do |group| %>
+		
 		<li>
 			<div class="company-listing-logo">
 				<%= image_tag group.logo.url(:thumb) %>

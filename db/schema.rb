@@ -13,9 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20131017202926) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "announcements", force: true do |t|
     t.integer  "group_id"
     t.text     "content"
