@@ -34,14 +34,11 @@
     visibility: inherit !important;
     float:right !important;
     margin-top:23px;
-    /*display: inline-block;*/
-    /*right:0;*/
     margin-left:900px;
 }
 
 .center-header { 
     margin:0 auto; width: 200px;
-    /*background:blue;*/
     text-align: center;}
 .center-header h2 {
     font-size:18pt;
@@ -70,10 +67,9 @@ margin:0 auto;}
 
 .right-side-new-person { 
 	display: inline-block; 
-	padding-left:23px;
-	/*background:blue;*/ }
+	padding-left:23px; }
+
 .left-side-new-person{ 
-	/*background:red; */
 	display: inline-block; 
 	float:left;
 	border-right: solid 1px #888;
@@ -96,9 +92,9 @@ margin:0 auto;}
 
 .right-side-contacts { 
 	display: inline-block; 
-	/*background:blue;*/ }
+ }
 .left-side-contacts{ 
-	/*background:red; */
+
 	display: inline-block; 
 	float:left;
 	border-right: solid 1px #888;
@@ -166,7 +162,7 @@ margin:0 auto;}
 .groups-h4 { float:left;}
 
  .pure-button-secondary {
-            background: rgb(66, 184, 221); /* this is a light blue */
+            background: rgb(66, 184, 221); 
             color: white;
             font-weight: 100;
             font-family: 'Lato', sans-serif;
@@ -238,10 +234,8 @@ margin-top:10px;}
 
 .centered-column-one {
 	width: 400px;
-	/*height:300px;*/
 	margin:0 auto;
 	display: block;
-	/*background:blue;*/
 }
 
 
@@ -305,7 +299,6 @@ p {
     margin: 0 auto;
     margin-top:150px;
     max-width:900px;
-    /*background: /*blue*/;*/
 }
 
 .l-box {
@@ -329,7 +322,7 @@ p {
  */
 
 .banner {
-    background: transparent url('/assets/bg-header.png') 0 0 no-repeat fixed;
+    background: transparent url('http://s10.postimg.org/qvb257zx3/bg_header.png') 0 0 no-repeat fixed;
     background-position: center;
     background-size: 100%;
     text-align: center;

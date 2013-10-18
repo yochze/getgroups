@@ -103,7 +103,7 @@ $(document).ready(function(){
     	<% end %>
         
         	<td class="img-column"><%= image_tag person.avatar.url(:thumb), class: 'tiny-user' %></td>
-            <td><%= person.first_name  %></td>
+            <td><%= person.first_name + ' ' + person.last_name %></td>
             <td><%= person.job_title  %></td>
             <td><%= person.phone  %></td>
             <td><%= person.email  %></td>
