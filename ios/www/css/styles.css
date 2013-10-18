@@ -1,0 +1,124 @@
+        body {
+            margin: 0 0;
+            padding: 0 0;
+            font-family:Helvetica, Arial, Verdana, sans-serif;;
+        }
+
+        #header {
+            /*position:fixed;*/
+            top:0;
+            height:45px;
+            width:100%;
+            background-color: #f4f4f4;
+            border-bottom: 1px solid #adadad;
+        }
+
+        #header h1 {
+            padding-top: 13px;
+            margin-top: 0px;
+            padding-left: 4px;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        #menu {
+            position:fixed;
+            bottom:0;
+            height:35px;
+            width:100%;
+            background-color: #0097dd;
+        }
+        #menu span {
+            display: inline-block;
+            padding-top: 8px;
+            margin: 0 auto;
+            text-align: center;
+            width: 32%;
+            margin-left: 1px;
+            color: white;
+        }
+        
+        #menu span a, #menu span a:visited {
+            text-decoration: none;
+            color: white;
+        }
+
+        .announcements_group_name {
+            font-weight: bold;
+            background-color: #f4f4f4;
+            padding: 8px 4px;
+        }
+
+        .announcements_content {
+            padding: 8px 4px;
+        }
+
+
+        ul#content {
+            list-style: none;
+            list-style-type: none;
+            padding-left: 4px;
+            /*margin-left: 4px;*/
+            padding-right: 4px;
+        }
+
+        ul#content li {
+            display: block;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+        }
+
+        .list_group_li {
+            background-color: #f4f4f4;
+            border-bottom: 1px solid #adadad;
+            border-top: 1px solid #adadad;
+            padding-top: 6px;
+            padding-bottom: 6px;
+            padding-left: 6px;
+        }
+
+        .group_enter {
+            float: right;
+            background-image: url('../img/next.png');
+            background-repeat:no-repeat;
+            background-position:center; 
+            width: 20px;
+            height: 20px;
+            padding-right: 6px;
+            padding-top: 2px;
+            
+        }
+
+        .add_group {
+            background-color: #00b770;
+            display: block;
+            color: white;
+            padding: 10px;
+            border: 0px !important;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        #add_group, #add_group:visited {
+            text-decoration: none;
+            color: white;
+        }
+
+        .contact_image {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            border-radius: 5px;
+            border: 0px;
+            float: left;
+            padding-right: 6px;
+        }
+
+        .contact_name {
+            display: inline-block;
+        }
+
+        .phone {
+            display: inline-block;
+        }

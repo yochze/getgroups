@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Contact Example</title>
+        
+        <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+        
+        <script type="text/javascript" charset="utf-8">
+            function onBodyLoad() {
+                document.addEventListener("deviceready", onDeviceReady, false);
+            }
+            
+            
+            function onDeviceReady() {
+                
+                $('.add_group').click(function(e) {
+                    e.preventDefault();
+                     
+                    var db = window.openDatabase("Database", "1.0", "GetContacts", 200000);
+                    var token = $('form input[type="text"]').val();
+                     
+                    db.transaction(function(tx){
+                        tx.executeSql('CREATE TABLE IF NOT EXISTS tokens (id unique)');
+                        var sqlStr = 'INSERT INTO tokens (id) VALUES (?)';
+                        tx.executeSql(sqlStr, [token]);
+                        }, errorCB, successCB);
+                     
+                    });
+            }
+            
+            // Transaction error callback
+            //
+            function errorCB(tx, err) {
+                alert("Error processing SQL: "+err);
+            }
+            
+            // Transaction success callback
+            //
+            function successCB() {
+                window.open("index.html",'_self');
+            }
+            
+            </script>
+    </head>
+    <body onload="onBodyLoad()">
+        <div id="header">
+          <h1>Connect</h1>
+        </div>
+        <form>
+            <div style="text-align:center; padding:4px;">
+                <input type="text" id="code" style="width:97%; height: 25px;padding-left: 4px; border-radius: 4px;" />
+                <a class="add_group" style="margin-top:4px;">Submit</a>
+            </div>
+        </form>
+        <div id="menu">
+            <span><a href="index.html">Feed</a></span>
+            <span><a href="groups.html">Groups</a></span>
+            <span><a href="connect.html">Connect</a></span>
+        </div>
+    </body>
+</html>
